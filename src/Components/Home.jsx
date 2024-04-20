@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
+import AddAccountForm from "./AddAccountForm";
 import Menubar from "./Menubar";
 function Home() {
+  // State to manage form visibility
+  const [showForm, setShowForm] = useState(false);
+
+  // Function to toggle form visibility
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
     <div>
       {/* Start Navbar Section */}
@@ -25,7 +34,7 @@ function Home() {
       {/*End Navbar Section */}
 
       {/*Start Search Bar Section */}
-      <div className="search-bar">
+      <section className="search-bar">
         <div className="container-fluid">
           <div className="row">
             <div className="col-4">
@@ -50,11 +59,11 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       {/*End Search Bar Section */}
 
       {/*Start Table Section */}
-      <div className="table-section">
+      <section className="table-section">
         <div className="container-fluid">
           <div className="row mt-4">
             <div className="col-sm-12 col-md-6 col-lg-4 ">
@@ -87,13 +96,24 @@ function Home() {
                   </tbody>
                 </table>
               </div>
+              {/* Button to toggle form */}
               <div className="table-button">
-                <button type="button">Add Account</button>
+                <button type="button" onClick={toggleForm}>
+                  Add Account
+                </button>
               </div>
+              {/* Popup Add Account Form */}
+              {showForm && (
+                <div className="modal-overlay">
+                  <div className="modal-content">
+                    <AddAccountForm onClose={toggleForm} />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      </div>
+      </section>
       {/*End Table Section */}
     </div>
   );
