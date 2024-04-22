@@ -65,7 +65,7 @@ function Home() {
       {/*Start Table Section */}
       <section className="table-section">
         <div className="container-fluid">
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-sm-12 col-md-6 col-lg-4 ">
               <Menubar />
             </div>

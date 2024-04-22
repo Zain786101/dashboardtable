@@ -12,38 +12,32 @@ function Form() {
               <form className="form-outer-group">
                 <div className="row mt-5">
                   <div className="col-md-4 mb-3">
-                    <label htmlFor="validationServer01">First name</label>
+                    <label htmlFor="validationServer01">Serial No</label>
                     <input
                       type="text"
                       className="form-control"
                       id="validationServer01"
                       placeholder=""
-                      value=""
+                      // value=""
                       required
                     />
                   </div>
                   <div className="col-md-4 mb-3">
-                    <label htmlFor="validationServer02">Last name</label>
+                    <label htmlFor="validationServer02">Group</label>
                     <input
                       type="text"
                       className="form-control"
                       id="validationServer02"
                       placeholder=""
-                      value=""
+                      // value=""
                       required
                     />
                   </div>
                   <div className="col-md-4 mb-3">
-                    <label htmlFor="validationServerUsername">Username</label>
+                    <label htmlFor="validationServerUsername">
+                      Upgrade Status
+                    </label>
                     <div className="input-group">
-                      {/* <div className="input-group-prepend">
-                        <span
-                          className="input-group-text"
-                          id="inputGroupPrepend3"
-                        >
-                          @
-                        </span>
-                      </div> */}
                       <input
                         type="text"
                         className="form-control"
@@ -59,8 +53,8 @@ function Form() {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="validationServer03">City</label>
+                  <div className="col-md-3 mb-3">
+                    <label htmlFor="validationServer03">Account</label>
                     <input
                       type="text"
                       className="form-control"
@@ -73,7 +67,7 @@ function Form() {
                     </div> */}
                   </div>
                   <div className="col-md-3 mb-3">
-                    <label htmlFor="validationServer04">State</label>
+                    <label htmlFor="validationServer04">Proxy</label>
                     <input
                       type="text"
                       className="form-control"
@@ -86,7 +80,20 @@ function Form() {
                       </div> */}
                   </div>
                   <div className="col-md-3 mb-3">
-                    <label htmlFor="validationServer05">Zip</label>
+                    <label htmlFor="validationServer05">Status</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="validationServer05"
+                      placeholder=""
+                      required
+                    />
+                    {/* <div className="invalid-feedback">
+                      Please provide a valid zip.
+                    </div> */}
+                  </div>{" "}
+                  <div className="col-md-3 mb-3">
+                    <label htmlFor="validationServer05">Action</label>
                     <input
                       type="text"
                       className="form-control"
