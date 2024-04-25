@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./addaccountform.css";
 
-function Form() {
+function Form({ onSubmit }) {
   const [formData, setFormData] = useState({
     serial: "",
     group: "",
@@ -12,10 +12,15 @@ function Form() {
     action: "",
   });
   const handleInput = (event) => {
-    console.log(event.target.value);
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onsubmit(formData);
+    console.log(formData);
+  };
+
   return (
     <div>
       <div className="user-form">
@@ -23,7 +28,7 @@ function Form() {
           <div className="row mt-5 justify-content-center">
             {/* <div className="col-6"></div> */}
             <div className="col-lg-6 col-sm-12 col-md-8">
-              <form className="form-outer-group">
+              <form className="form-outer-group" onSubmit={handleSubmit}>
                 <div className="row mt-5">
                   <div className="col-md-4 col-sm-4 mb-3">
                     <label htmlFor="validationServer01">Serial No</label>
@@ -157,7 +162,7 @@ function Form() {
                   </div> */}
                   <button className="form-button btn btn-primary" type="submit">
                     Submit form
-                  </button>{" "}
+                  </button>
                 </div>
               </form>
             </div>

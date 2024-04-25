@@ -34,6 +34,9 @@ body {
     margin-right: 40px;
 }
 
+
+
+
 .brekline {
     border-bottom: 2px solid #4E4D51;
     margin-top: 10px;
@@ -111,6 +114,7 @@ body {
 .table {
     background-color: #1C1B20;
 }
+
 .table-button {
     display: flex;
 }

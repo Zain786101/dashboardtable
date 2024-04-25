@@ -4,7 +4,7 @@ import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
 import AddAccountForm from "./AddAccountForm";
 import Menubar from "./Menubar";
-function Home() {
+function Home(formData) {
   // State to manage form visibility
   const [showForm, setShowForm] = useState(false);
 
@@ -32,7 +32,6 @@ function Home() {
         </div>
       </section>
       {/*End Navbar Section */}
-
       {/*Start Search Bar Section */}
       <section className="search-bar">
         <div className="container-fluid">
@@ -61,7 +60,6 @@ function Home() {
         </div>
       </section>
       {/*End Search Bar Section */}
-
       {/*Start Table Section */}
       <section className="table-section">
         <div className="container-fluid">
@@ -85,7 +83,7 @@ function Home() {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
+                      <th>{formData.serial}</th>
                       <td>Model1</td>
                       <td>Free</td>
                       <td>tx393</td>
