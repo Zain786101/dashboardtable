@@ -4,7 +4,7 @@ import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
 import AddAccountForm from "./AddAccountForm";
 import Menubar from "./Menubar";
-function Home(formData) {
+function Home() {
   // State to manage form visibility
   const [showForm, setShowForm] = useState(false);
 
@@ -83,14 +83,23 @@ function Home(formData) {
                   </thead>
                   <tbody>
                     <tr>
-                      <th>{formData.serial}</th>
-                      <td>Model1</td>
-                      <td>Free</td>
-                      <td>tx393</td>
-                      <td>proxy1.com</td>
-                      <td>running</td>
-                      <td>Action</td>
+                      <th>Data</th>
+                      <td>Data</td>
+                      <td>Data</td>
+                      <td>Data</td>
+                      <td>Data</td>
+                      <td>Data</td>
+                      <td>Data</td>
                     </tr>
+                    {/* <tr>
+                      <th>{formData.serial}</th>
+                      <td>{formData.group}</td>
+                      <td>{formData.upgradeStatus}</td>
+                      <td>{formData.account}</td>
+                      <td>{formData.proxy}</td>
+                      <td>{formData.status}</td>
+                      <td>{formData.action}</td>
+                    </tr> */}
                   </tbody>
                 </table>
               </div>

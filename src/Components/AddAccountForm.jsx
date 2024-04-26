@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./addaccountform.css";
 
-function Form({ onSubmit }) {
+function Form() {
+  const [tableData, setTableData] = useState([]);
   const [formData, setFormData] = useState({
     serial: "",
     group: "",
@@ -11,14 +12,34 @@ function Form({ onSubmit }) {
     status: "",
     action: "",
   });
+
   const handleInput = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    onsubmit(formData);
     console.log(formData);
+    console.log(tableData);
+  };
+
+  const onFormSubmit = (event) => {
+    const checkVal = !Object.values(setFormData).every((res) => res === "");
+    if (checkVal) {
+      const dataObj = (data) => [...data, setFormData];
+      setTableData(dataObj);
+      console.log(dataObj);
+      const isEmpty = {
+        serial: "",
+        group: "",
+        upgradeStatus: "",
+        account: "",
+        proxy: "",
+        status: "",
+        action: "",
+      };
+      setFormData(isEmpty);
+    }
   };
 
   return (
@@ -28,7 +49,7 @@ function Form({ onSubmit }) {
           <div className="row mt-5 justify-content-center">
             {/* <div className="col-6"></div> */}
             <div className="col-lg-6 col-sm-12 col-md-8">
-              <form className="form-outer-group" onSubmit={handleSubmit}>
+              <form className="form-outer-group  " onSubmit={handleSubmit}>
                 <div className="row mt-5">
                   <div className="col-md-4 col-sm-4 mb-3">
                     <label htmlFor="validationServer01">Serial No</label>
@@ -160,7 +181,11 @@ function Form({ onSubmit }) {
                       You must agree before submitting.
                     </div>
                   </div> */}
-                  <button className="form-button btn btn-primary" type="submit">
+                  <button
+                    className="form-button btn btn-primary"
+                    type="submit"
+                    onClick={onFormSubmit}
+                  >
                     Submit form
                   </button>
                 </div>
@@ -168,6 +193,10 @@ function Form({ onSubmit }) {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <h2>{tableData.serial}</h2>
+        <h2>{formData.serial}</h2>
       </div>
     </div>
   );
