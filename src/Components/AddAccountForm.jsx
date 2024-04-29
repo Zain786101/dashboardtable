@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./addaccountform.css";
 
-function Form() {
-  const [tableData, setTableData] = useState([]);
+function Form({ onSubmit }) {
   const [formData, setFormData] = useState({
     serial: "",
     group: "",
@@ -17,29 +16,22 @@ function Form() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    console.log(tableData);
-  };
-
-  const onFormSubmit = (event) => {
-    const checkVal = !Object.values(setFormData).every((res) => res === "");
-    if (checkVal) {
-      const dataObj = (data) => [...data, setFormData];
-      setTableData(dataObj);
-      console.log(dataObj);
-      const isEmpty = {
-        serial: "",
-        group: "",
-        upgradeStatus: "",
-        account: "",
-        proxy: "",
-        status: "",
-        action: "",
-      };
-      setFormData(isEmpty);
+    if (onSubmit) {
+      onSubmit(formData); // Pass form data to the parent component
     }
+    setFormData({
+      serial: "",
+      group: "",
+      upgradeStatus: "",
+      account: "",
+      proxy: "",
+      status: "",
+      action: "",
+    });
   };
 
   return (
@@ -184,7 +176,7 @@ function Form() {
                   <button
                     className="form-button btn btn-primary"
                     type="submit"
-                    onClick={onFormSubmit}
+                    // onClick={onFormSubmit}
                   >
                     Submit form
                   </button>
@@ -194,10 +186,9 @@ function Form() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2>{tableData.serial}</h2>
-        <h2>{formData.serial}</h2>
-      </div>
+      </div> */}
     </div>
   );
 }

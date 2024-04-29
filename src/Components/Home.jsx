@@ -13,6 +13,14 @@ function Home() {
     setShowForm(!showForm);
   };
 
+  const [formData, setFormData] = useState([]);
+
+  const handleFormSubmit = (data) => {
+    // Handle form submission logic here
+    console.log("Form submitted with data:", data);
+    setFormData([...formData, data]); // Update formData state with new data
+    setShowForm(false); // Hide the form after submission
+  };
   return (
     <div>
       {/* Start Navbar Section */}
@@ -82,24 +90,17 @@ function Home() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th>Data</th>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                      <td>Data</td>
-                    </tr>
-                    {/* <tr>
-                      <th>{formData.serial}</th>
-                      <td>{formData.group}</td>
-                      <td>{formData.upgradeStatus}</td>
-                      <td>{formData.account}</td>
-                      <td>{formData.proxy}</td>
-                      <td>{formData.status}</td>
-                      <td>{formData.action}</td>
-                    </tr> */}
+                    {formData.map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.serial}</td>
+                        <td>{item.group}</td>
+                        <td>{item.upgradeStatus}</td>
+                        <td>{item.account}</td>
+                        <td>{item.proxy}</td>
+                        <td>{item.status}</td>
+                        <td>{item.action}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -113,7 +114,10 @@ function Home() {
               {showForm && (
                 <div className="modal-overlay">
                   <div className="modal-content">
-                    <AddAccountForm onClose={toggleForm} />
+                    <AddAccountForm
+                      onSubmit={handleFormSubmit}
+                      onClose={toggleForm}
+                    />
                   </div>
                 </div>
               )}
