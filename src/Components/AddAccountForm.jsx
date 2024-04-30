@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./addaccountform.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function Form({ onSubmit }) {
+function Form({ onSubmit, onClose }) {
   const [formData, setFormData] = useState({
     serial: "",
     group: "",
@@ -17,9 +19,12 @@ function Form({ onSubmit }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
+    try {
+      // Send form data to backend server
+      await axios.post('http://localhost:5000/api/saveFormData', formData);
     if (onSubmit) {
       onSubmit(formData); // Pass form data to the parent component
     }
@@ -33,7 +38,11 @@ function Form({ onSubmit }) {
       action: "",
     });
   };
-
+  const handleCancel = () => {
+    if (onClose) {
+      onClose(); // Call the onClose function passed from the parent component
+    }
+  };
   return (
     <div>
       <div className="user-form">
@@ -42,6 +51,16 @@ function Form({ onSubmit }) {
             {/* <div className="col-6"></div> */}
             <div className="col-lg-6 col-sm-12 col-md-8">
               <form className="form-outer-group  " onSubmit={handleSubmit}>
+                <div className="close-btn">
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    onClick={handleCancel}
+                  >
+                    <FontAwesomeIcon icon={faXmark} className="close-icon" />
+                  </button>
+                </div>
+
                 <div className="row mt-5">
                   <div className="col-md-4 col-sm-4 mb-3">
                     <label htmlFor="validationServer01">Serial No</label>
@@ -158,21 +177,6 @@ function Form({ onSubmit }) {
                   </div>
                 </div>
                 <div className="form-group">
-                  {/* <div className="form-check">
-                    <input
-                      className="form-check-input is-invalid"
-                      type="checkbox"
-                      value=""
-                      id="invalidCheck3"
-                      required
-                    />
-                    <label className="form-check-label" htmlFor="invalidCheck3">
-                      Agree to terms and conditions
-                    </label>
-                    <div className="invalid-feedback">
-                      You must agree before submitting.
-                    </div>
-                  </div> */}
                   <button
                     className="form-button btn btn-primary"
                     type="submit"
@@ -186,9 +190,6 @@ function Form({ onSubmit }) {
           </div>
         </div>
       </div>
-      {/* <div>
-        <h2>{tableData.serial}</h2>
-      </div> */}
     </div>
   );
 }

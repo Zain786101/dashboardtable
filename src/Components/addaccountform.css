@@ -6,6 +6,30 @@
 
 }
 
+.close-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn.btn-outline {
+
+    color: black;
+    /* border: 1px solid #e31c51; */
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.btn.btn-outline:hover {
+
+    background-color: #e31c51;
+    color: white;
+}
+
+*/ .close-icon {
+    color: white;
+    font-size: 28px;
+}
+
 .form-button {
     margin-top: 20px;
     padding: 10px;

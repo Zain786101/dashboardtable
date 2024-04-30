@@ -19,8 +19,9 @@ function Home() {
     // Handle form submission logic here
     console.log("Form submitted with data:", data);
     setFormData([...formData, data]); // Update formData state with new data
-    setShowForm(false); // Hide the form after submission
+    // setShowForm(false); // Hide the form after submission
   };
+
   return (
     <div>
       {/* Start Navbar Section */}
@@ -68,6 +69,7 @@ function Home() {
         </div>
       </section>
       {/*End Search Bar Section */}
+
       {/*Start Table Section */}
       <section className="table-section">
         <div className="container-fluid">
