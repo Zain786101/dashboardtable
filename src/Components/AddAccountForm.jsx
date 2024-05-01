@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./addaccountform.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
-function Form({ onSubmit, onClose }) {
+function Form({ onClose }) {
   const [formData, setFormData] = useState({
     serial: "",
     group: "",
@@ -14,7 +15,7 @@ function Form({ onSubmit, onClose }) {
     action: "",
   });
 
-  const handleInput = (event) => {
+  const handleInput = async (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -23,20 +24,26 @@ function Form({ onSubmit, onClose }) {
     event.preventDefault();
     console.log(formData);
     try {
-      // Send form data to backend server
-      await axios.post('http://localhost:5000/api/saveFormData', formData);
-    if (onSubmit) {
-      onSubmit(formData); // Pass form data to the parent component
+      // Send form data to backend server (assuming it's running locally)
+      const response = await axios.post("http://localhost:3000/user", formData);
+      // POST request to update the JSON file
+
+      // Reset form fields after successful submission
+      setFormData({
+        serial: "",
+        group: "",
+        upgradeStatus: "",
+        account: "",
+        proxy: "",
+        status: "",
+        action: "",
+      });
+
+      console.log("Form data submitted successfully:", response.data);
+    } catch (error) {
+      console.error("Error submitting form data:", error);
+      // Handle error state or display error message
     }
-    setFormData({
-      serial: "",
-      group: "",
-      upgradeStatus: "",
-      account: "",
-      proxy: "",
-      status: "",
-      action: "",
-    });
   };
   const handleCancel = () => {
     if (onClose) {

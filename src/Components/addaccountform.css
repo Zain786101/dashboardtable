@@ -44,3 +44,7 @@
     color: #000000;
     /* Change text color to dark */
 }
+
+.form-control {
+    border-radius: 8px;
+}

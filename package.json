@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "source-map-loader": "^5.0.0"
+    "source-map-loader": "^5.0.0",
+    "terser-webpack-plugin": "^4.2.3"
   }
 }

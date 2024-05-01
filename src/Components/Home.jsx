@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./home.css";
 import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
@@ -21,7 +22,18 @@ function Home() {
     setFormData([...formData, data]); // Update formData state with new data
     // setShowForm(false); // Hide the form after submission
   };
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/user");
+        setFormData(response.data); // Update tableData state with API response
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
 
+    fetchUserData(); // Fetch user data when component mounts
+  }, []);
   return (
     <div>
       {/* Start Navbar Section */}
@@ -41,6 +53,7 @@ function Home() {
         </div>
       </section>
       {/*End Navbar Section */}
+
       {/*Start Search Bar Section */}
       <section className="search-bar">
         <div className="container-fluid">
@@ -58,7 +71,7 @@ function Home() {
             <div className="col-8">
               <form class="form-inline">
                 <input
-                  class="form-control mr-sm-2"
+                  className="form-control mr-sm-2"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
