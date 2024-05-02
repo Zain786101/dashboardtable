@@ -1,32 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faGear } from "@fortawesome/free-solid-svg-icons";
 import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
 import AddAccountForm from "./AddAccountForm";
 import Menubar from "./Menubar";
+import ToggleButton from "./ToggleButton";
 function Home() {
   // State to manage form visibility
   const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState([]);
+  const [tableData, setTableData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   // Function to toggle form visibility
   const toggleForm = () => {
     setShowForm(!showForm);
   };
 
-  const [formData, setFormData] = useState([]);
-
   const handleFormSubmit = (data) => {
-    // Handle form submission logic here
-    console.log("Form submitted with data:", data);
-    setFormData([...formData, data]); // Update formData state with new data
-    // setShowForm(false); // Hide the form after submission
+    // Update formData, tableData, and filteredData with new data
+    const updatedTableData = [...tableData, data];
+    setFormData([...formData, data]);
+    setTableData(updatedTableData);
+    setFilteredData(updatedTableData);
+    toggleForm(); // Hide the form after submission
   };
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get("http://localhost:3000/user");
         setFormData(response.data); // Update tableData state with API response
+        setTableData(response.data); // Initialize tableData with all data
+        setFilteredData(response.data); // Initialize filteredData with all dat
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -34,6 +42,19 @@ function Home() {
 
     fetchUserData(); // Fetch user data when component mounts
   }, []);
+  const handleSearch = (event) => {
+    const searchValue = event.target.value.toLowerCase();
+    const filteredResult = formData.filter(
+      (item) =>
+        item.serial.toLowerCase().includes(searchValue) ||
+        item.group.toLowerCase().includes(searchValue) ||
+        item.upgradeStatus.toLowerCase().includes(searchValue) ||
+        item.account.toLowerCase().includes(searchValue) ||
+        item.proxy.toLowerCase().includes(searchValue) ||
+        item.status.toLowerCase().includes(searchValue)
+    );
+    setFilteredData(filteredResult);
+  };
   return (
     <div>
       {/* Start Navbar Section */}
@@ -75,6 +96,7 @@ function Home() {
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                  onChange={handleSearch}
                 />
               </form>
             </div>
@@ -92,7 +114,7 @@ function Home() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-8 ">
               <div className="main-table">
-                <table className="table ">
+                <table className="table table-striped table-dark table-custom">
                   <thead>
                     <tr>
                       <th scope="col">Serial</th>
@@ -105,7 +127,7 @@ function Home() {
                     </tr>
                   </thead>
                   <tbody>
-                    {formData.map((item, index) => (
+                    {filteredData.map((item, index) => (
                       <tr key={index}>
                         <td>{item.serial}</td>
                         <td>{item.group}</td>
@@ -113,7 +135,19 @@ function Home() {
                         <td>{item.account}</td>
                         <td>{item.proxy}</td>
                         <td>{item.status}</td>
-                        <td>{item.action}</td>
+                        <td>
+                          <div className="toggle-button">
+                            <button className="btn btn-outline-secondary">
+                              <FontAwesomeIcon icon={faCartShopping} />
+                            </button>
+                            <span style={{ margin: "0 5px" }}></span>
+                            <ToggleButton />
+                            <span style={{ margin: "0 5px" }}></span>
+                            <button className="btn btn-outline-secondary">
+                              <FontAwesomeIcon icon={faGear} />
+                            </button>
+                          </div>
+                        </td>
                       </tr>
                     ))}
                   </tbody>

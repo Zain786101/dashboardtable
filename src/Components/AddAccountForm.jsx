@@ -12,7 +12,6 @@ function Form({ onClose }) {
     account: "",
     proxy: "",
     status: "",
-    action: "",
   });
 
   const handleInput = async (event) => {
@@ -36,7 +35,6 @@ function Form({ onClose }) {
         account: "",
         proxy: "",
         status: "",
-        action: "",
       });
 
       console.log("Form data submitted successfully:", response.data);
@@ -111,14 +109,11 @@ function Form({ onClose }) {
                         aria-describedby="inputGroupPrepend3"
                         required
                       />
-                      {/* <div className="invalid-feedback">
-                        Please choose a username.
-                      </div> */}
                     </div>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-3 col-sm-8 mb-3">
+                  <div className="col-md-4 col-sm-4 mb-3">
                     <label htmlFor="validationServer03">Account</label>
                     <input
                       type="text"
@@ -130,11 +125,8 @@ function Form({ onClose }) {
                       placeholder=""
                       required
                     />
-                    {/* <div className="invalid-feedback">
-                      Please provide a valid city.
-                    </div> */}
                   </div>
-                  <div className="col-md-3 col-sm-8 mb-3">
+                  <div className="col-md-4 col-sm-4 mb-3">
                     <label htmlFor="validationServer04">Proxy</label>
                     <input
                       type="text"
@@ -146,11 +138,8 @@ function Form({ onClose }) {
                       placeholder=""
                       required
                     />
-                    {/* <div className="invalid-feedback">
-                        Please provide a valid state.
-                      </div> */}
                   </div>
-                  <div className="col-md-3 col-sm-8 mb-3">
+                  <div className="col-md-4 col-sm-4 mb-3">
                     <label htmlFor="validationServer05">Status</label>
                     <input
                       type="text"
@@ -162,25 +151,6 @@ function Form({ onClose }) {
                       placeholder=""
                       required
                     />
-                    {/* <div className="invalid-feedback">
-                      Please provide a valid zip.
-                    </div> */}
-                  </div>
-                  <div className="col-md-3 col-sm-8 mb-3">
-                    <label htmlFor="validationServer05">Action</label>
-                    <input
-                      name="action"
-                      type="text"
-                      className="form-control"
-                      id="validationServer05"
-                      value={formData.action}
-                      onChange={handleInput}
-                      placeholder=""
-                      required
-                    />
-                    {/* <div className="invalid-feedback">
-                      Please provide a valid zip.
-                    </div> */}
                   </div>
                 </div>
                 <div className="form-group">
