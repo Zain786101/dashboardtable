@@ -61,14 +61,15 @@ function Home() {
       <section className="header">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-6 logoName">
+            <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center logoName">
               <h4>TindAPI</h4>
             </div>
-            <div className="col-6 ">
+            <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center profile-container">
               <div className="profile">
                 <img alt="profileImage" src={profileImg} />
               </div>
             </div>
+
             <div className="brekline"></div>
           </div>
         </div>
@@ -79,20 +80,18 @@ function Home() {
       <section className="search-bar">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-4">
-              <div className="user-profile">
-                <img alt="User Profile" src={userProfile} />
-                <div className="userinfo">
-                  <h4>Username</h4>
-                  <p>364/500 Tokens</p>
-                </div>
+            <div className="col-sm-12 col-md-4 col-lg-4  justify-content-center  user-profile">
+              <img alt="User Profile" src={userProfile} />
+              <div className="userinfo">
+                <h4>Username</h4>
+                <p>364/500 Tokens</p>
               </div>
             </div>
 
-            <div className="col-8">
+            <div className="col-sm-12 col-md-8 col-lg-8  ">
               <form class="form-inline">
                 <input
-                  className="form-control mr-sm-2"
+                  className="form-control mr-sm-2 searchBar"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
@@ -113,7 +112,7 @@ function Home() {
               <Menubar />
             </div>
             <div className="col-sm-12 col-md-6 col-lg-8 ">
-              <div className="main-table">
+              <div className="table-responsive main-table ">
                 <table className="table table-striped table-dark table-custom">
                   <thead>
                     <tr>
