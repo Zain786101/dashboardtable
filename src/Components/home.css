@@ -70,30 +70,51 @@ body {
 }
 
 
-
-
 .brekline {
     border-bottom: 2px solid #4E4D51;
     margin-top: 10px;
 }
+
+
+
+
+@media (min-width: 992px) {
+    .user-profile {
+        padding-left: 60px;
+        /* Adjust padding instead of margin */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .user-profile {
+        padding-left: 60px;
+
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .user-profile {
+        justify-content: center;
+    }
+}
+
 
 .user-profile {
     display: flex;
 
 }
 
-
-@media (min-width: 992px) {
-    .user-profile {
-        justify-content: flex-start !important;
-
-    }
+.user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 10px;
 }
 
-.searchBar {
+/* .searchBar {
     margin-top: 20px;
 }
-
+ */
 
 .userinfo {
     margin-left: 10px;
@@ -108,12 +129,7 @@ body {
     color: rgba(247, 244, 244, 0.801);
 }
 
-.user-profile img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin-top: 10px;
-}
+
 
 .search-bar {
     margin-top: 40px;

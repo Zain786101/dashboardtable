@@ -80,7 +80,7 @@ function Home() {
       <section className="search-bar">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-sm-12 col-md-4 col-lg-4  justify-content-center  user-profile">
+            <div className="col-sm-12 col-md-6 col-lg-4  user-profile">
               <img alt="User Profile" src={userProfile} />
               <div className="userinfo">
                 <h4>Username</h4>
@@ -88,7 +88,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-sm-12 col-md-8 col-lg-8  ">
+            <div className="col-sm-12 col-md-6 col-lg-8  justify-content-center search-bar">
               <form class="form-inline">
                 <input
                   className="form-control mr-sm-2 searchBar"
