@@ -41,7 +41,7 @@ function AddAccountForm({ onClose }) {
     <div className="user-form">
       <div className="container">
         <div className="row mt-5 justify-content-center">
-          <div className="col-lg-6 col-md-8 col-sm-10">
+          <div className="col-lg-6 col-md-8 col-sm-10 ">
             <form className="form-outer-group" onSubmit={handleSubmit}>
               <div className="close-btn">
                 <button

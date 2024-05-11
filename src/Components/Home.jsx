@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faGear } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faGear,
+  faSliders,
+} from "@fortawesome/free-solid-svg-icons";
 import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
 import AddAccountForm from "./AddAccountForm";
@@ -88,10 +92,18 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-sm-12 col-md-6 col-lg-8  justify-content-center search-bar">
+            <div className="col-sm-12 d-block d-sm-inlinecol-sm-12 d-block d-sm-inline mb-3 mb-sm-0">
+              <button
+                className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
+                // onClick={toggleMenu}
+              >
+                <FontAwesomeIcon icon={faSliders} />
+              </button>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-8  justify-content-center ">
               <form class="form-inline">
                 <input
-                  className="form-control mr-sm-2 searchBar"
+                  className="form-control mr-sm-2  searchBar"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
@@ -128,7 +140,7 @@ function Home() {
                   <tbody>
                     {filteredData.map((item, index) => (
                       <tr key={index}>
-                        <td>{item.serial}</td>
+                        <td>{index + 1}</td>
                         <td>{item.group}</td>
                         <td>{item.upgradeStatus}</td>
                         <td>{item.account}</td>
