@@ -84,7 +84,7 @@ function Home() {
       <section className="search-bar">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-4  user-profile">
+            <div className="col-sm-12 col-md-6 col-lg-4  user-profile order-sm-first">
               <img alt="User Profile" src={userProfile} />
               <div className="userinfo">
                 <h4>Username</h4>
@@ -92,14 +92,6 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-sm-12 d-block d-sm-inlinecol-sm-12 d-block d-sm-inline mb-3 mb-sm-0">
-              <button
-                className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
-                // onClick={toggleMenu}
-              >
-                <FontAwesomeIcon icon={faSliders} />
-              </button>
-            </div>
             <div className="col-sm-12 col-md-6 col-lg-8  justify-content-center ">
               <form class="form-inline">
                 <input
@@ -110,6 +102,14 @@ function Home() {
                   onChange={handleSearch}
                 />
               </form>
+            </div>
+            <div className="col-sm-12 d-block d-sm-inlinecol-sm-12 d-block d-sm-inline mb-3 mb-sm-0">
+              <button
+                className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
+                // onClick={toggleMenu}
+              >
+                <FontAwesomeIcon icon={faSliders} />
+              </button>
             </div>
           </div>
         </div>
