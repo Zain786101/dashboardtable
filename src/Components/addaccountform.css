@@ -1,50 +1,47 @@
 .form-outer-group {
-    background: linear-gradient(-300deg, #12A6EC, #cb8de8);
-    border-radius: 0 30px 0 30px;
-    margin-bottom: 10px;
-    padding: 20px;
-
+  background: linear-gradient(-300deg, #12a6ec, #cb8de8);
+  border-radius: 0 30px 0 30px;
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
 .close-btn {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .btn.btn-outline {
-
-    color: black;
-    /* border: 1px solid #e31c51; */
-    padding: 8px 16px;
-    transition: all 0.3s ease;
+  color: black;
+  /* border: 1px solid #e31c51; */
+  padding: 8px 16px;
+  transition: all 0.3s ease;
 }
 
 .btn.btn-outline:hover {
-
-    background-color: #e31c51;
-    color: white;
+  background-color: #e31c51;
+  color: white;
 }
 
 */ .close-icon {
-    color: white;
-    font-size: 28px;
+  color: white;
+  font-size: 28px;
 }
 
 .form-button {
-    margin-top: 20px;
-    padding: 10px;
-    width: 40%;
+  margin-top: 20px;
+  padding: 10px;
+  width: 40%;
 }
 
 /* addaccountform.css */
 
 .user-form .form-control {
-    background-color: white;
-    /* Change background color to white */
-    color: #000000;
-    /* Change text color to dark */
+  background-color: white;
+  /* Change background color to white */
+  color: #000000;
+  /* Change text color to dark */
 }
 
 .form-control {
-    border-radius: 8px;
+  border-radius: 8px;
 }

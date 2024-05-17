@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartShopping,
-  faGear,
-  faSliders,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faGear } from "@fortawesome/free-solid-svg-icons";
 import profileImg from "../images/person_3.jpg";
 import userProfile from "../images/person_1.jpg";
 import AddAccountForm from "./AddAccountForm";
@@ -36,6 +32,7 @@ function Home() {
     const fetchUserData = async () => {
       try {
         const response = await axios.get("http://localhost:3000/user");
+        console.log(response.data);
         setFormData(response.data); // Update tableData state with API response
         setTableData(response.data); // Initialize tableData with all data
         setFilteredData(response.data); // Initialize filteredData with all dat
@@ -50,7 +47,6 @@ function Home() {
     const searchValue = event.target.value.toLowerCase();
     const filteredResult = formData.filter(
       (item) =>
-        item.serial.toLowerCase().includes(searchValue) ||
         item.group.toLowerCase().includes(searchValue) ||
         item.upgradeStatus.toLowerCase().includes(searchValue) ||
         item.account.toLowerCase().includes(searchValue) ||
@@ -84,7 +80,7 @@ function Home() {
       <section className="search-bar">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-4  user-profile">
+            <div className="col-sm-12 col-md-6 col-lg-4  user-profile order-sm-first">
               <img alt="User Profile" src={userProfile} />
               <div className="userinfo">
                 <h4>Username</h4>
@@ -92,14 +88,6 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-sm-12 d-block d-sm-inlinecol-sm-12 d-block d-sm-inline mb-3 mb-sm-0">
-              <button
-                className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
-                // onClick={toggleMenu}
-              >
-                <FontAwesomeIcon icon={faSliders} />
-              </button>
-            </div>
             <div className="col-sm-12 col-md-6 col-lg-8  justify-content-center ">
               <form class="form-inline">
                 <input
@@ -111,6 +99,14 @@ function Home() {
                 />
               </form>
             </div>
+            {/* <div className="col-sm-12 d-block d-sm-inlinecol-sm-12 d-block d-sm-inline mb-3 mb-sm-0">
+              <button
+                className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
+                // onClick={toggleMenu}
+              >
+                <FontAwesomeIcon icon={faSliders} />
+              </button>
+            </div> */}
           </div>
         </div>
       </section>
