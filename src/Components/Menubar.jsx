@@ -12,10 +12,10 @@ import {
 
 function Menubar() {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
-        <div className="col-lg-8">
-          <div className="menu-list text-center text-sm-start">
+        <div className="col-sm-12 col-md-6 col-lg-8">
+          <div className="menu-list text-center text-sm-start listItem">
             <ul className="list">
               <li className="list-item">
                 <div className="icon-style">
@@ -51,7 +51,7 @@ function Menubar() {
                 <div className="icon-style">
                   <FontAwesomeIcon icon={faWindowMaximize} />
                 </div>
-                <span className="menu-text">GPT - 4 Setup</span>
+                <span className="menu-text">GPT4-Setup</span>
               </li>
             </ul>
           </div>
