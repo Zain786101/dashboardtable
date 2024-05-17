@@ -95,10 +95,28 @@ body {
   margin-top: 10px;
 }
 
-/* .searchBar {
-    margin-top: 20px;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .searchBar {
+    width: 100%;
+  }
 }
- */
+
+@media (max-width: 576px) {
+  .searchBar {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .searchBar input[type="search"] {
+    margin: auto;
+    display: block;
+  }
+}
+
+.searchBar {
+  margin-top: 10px;
+}
 
 .userinfo {
   margin-left: 10px;
