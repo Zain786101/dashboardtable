@@ -17,8 +17,14 @@
 
 }
 
+@media (max-width: 576px) {
+    .listItem ul li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 .list-item {
-    display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
