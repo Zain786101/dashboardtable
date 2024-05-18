@@ -1,14 +1,15 @@
 body {
-  background-color: #1c1b20;
-  color: white;
-  /* height: 1200px; */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: #1C1B20;
+    color: white;
+    font-family: sans-serif;
+    /* height: 1200px; */
+
 }
 
+
 .header {
-  margin-top: 10px;
+    margin-top: 10px;
+
 }
 
 /* .logoName h4 {
@@ -20,201 +21,243 @@ body {
 } */
 
 @media (min-width: 992px) {
-  .logoName {
-    justify-content: flex-start !important;
-    margin-top: 10px;
 
-    /* Reset justify-content for large screens */
-  }
+    .logoName {
+        justify-content: flex-start !important;
+        margin-top: 10px;
+
+        /* Reset justify-content for large screens */
+    }
 }
 
 @media (min-width: 992px) {
-  .profile-container {
-    justify-content: flex-end !important;
-  }
+    .profile-container {
+        justify-content: flex-end !important;
+
+
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .logoName {
-    justify-content: flex-start !important;
-    margin-top: 10px;
-  }
+    .logoName {
+        justify-content: flex-start !important;
+        margin-top: 10px;
+
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .profile-container {
-    justify-content: flex-end !important;
-  }
+    .profile-container {
+        justify-content: flex-end !important;
+
+    }
 }
+
+
 
 .profile {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .profile img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
-  position: relative;
-  /* margin-right: 40px; */
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    position: relative;
+    /* margin-right: 40px; */
 }
+
 
 .brekline {
-  border-bottom: 2px solid #4e4d51;
-  margin-top: 10px;
+    border-bottom: 2px solid #4E4D51;
+    margin-top: 10px;
 }
 
+
+
+
 @media (min-width: 992px) {
-  .user-profile {
-    padding-left: 60px;
-    /* Adjust padding instead of margin */
-  }
+    .user-profile {
+        padding-left: 60px;
+        /* Adjust padding instead of margin */
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .user-profile {
-    padding-left: 60px;
-  }
+    .user-profile {
+        padding-left: 60px;
+
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .user-profile {
-    justify-content: center;
-  }
-}
-
-.user-profile {
-  display: flex;
-}
-
-.user-profile img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  margin-top: 10px;
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .searchBar {
-    width: 100%;
-  }
+    .user-profile {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
-  .searchBar {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 10px;
-  }
+    .user-profile {
+        justify-content: center;
 
-  .searchBar input[type="search"] {
-    margin: auto;
-    display: block;
-  }
+    }
+}
+
+@media (max-width: 576px) {
+    .search-bar input::placeholder {
+        color: rgba(247, 244, 244, 0.801);
+    }
+}
+
+
+
+.user-profile {
+    display: flex;
+
+}
+
+.user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .searchBar {
+        width: 100%;
+
+
+    }
+}
+
+@media (max-width: 576px) {
+    .searchBar {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+
+    .searchBar input[type="search"] {
+        margin: auto;
+        display: block;
+
+    }
 }
 
 .searchBar {
-  margin-top: 10px;
+    margin-top: 10px;
+
 }
 
+
 .userinfo {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .userinfo h4 {
-  color: rgba(247, 244, 244, 0.801);
-  margin-top: 10px;
+    color: rgba(247, 244, 244, 0.801);
+    margin-top: 10px;
 }
 
 .userinfo p {
-  color: rgba(247, 244, 244, 0.801);
+    color: rgba(247, 244, 244, 0.801);
 }
 
+
+
+
 .search-bar {
-  margin-top: 40px;
+    margin-top: 40px;
+
 }
 
 .search-bar input::placeholder {
-  color: rgba(247, 244, 244, 0.801);
-  margin-right: 30px !important;
+    color: rgba(247, 244, 244, 0.801);
+    margin-right: 30px !important;
+
 }
 
 .input-group-prepend {
-  position: absolute;
-  left: 6px;
-  top: 18px;
-  z-index: 1;
+    position: absolute;
+    left: 6px;
+    top: 18px;
+    z-index: 1;
+
 }
 
 .input-group-text {
-  background: transparent;
-  color: rgba(247, 244, 244, 0.801);
-  border: none;
-  padding: 0;
-  margin-left: 10px;
+    background: transparent;
+    color: rgba(247, 244, 244, 0.801);
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+
 }
 
 .form-control {
-  /* width: 70%; */
-  height: 50px;
-  background-color: #3d3f4b;
-  border: none;
+    /* width: 70%; */
+    height: 50px;
+    background-color: #3D3F4B;
+    border: none;
+    border-radius: unset;
 }
 
 .form-inline {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 40px;
-  margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
 }
 
 @media (min-width: 992px) {
-  .main-table {
-    margin-right: 2rem;
-    /* Adjust margin size as needed */
-  }
+    .main-table {
+        margin-right: 2rem;
+        /* Adjust margin size as needed */
+    }
 }
 
 .table {
-  background-color: #1c1b20;
+    background-color: #1C1B20;
 }
 
 .table-button {
-  display: flex;
+    display: flex;
 }
 
 .table-button button {
-  background-color: #6377fc;
-  border: none;
-  border-radius: 5px;
-  width: 40%;
-  height: 48px;
-  color: rgba(247, 244, 244, 0.801);
+    background-color: #6377FC;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    height: 48px;
+    color: rgba(247, 244, 244, 0.801);
 
-  font-size: large;
+    font-size: large;
 }
 
 /* CSS for Home component */
 
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .toggle-button {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* .box {
