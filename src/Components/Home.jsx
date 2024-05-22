@@ -80,7 +80,7 @@ function Home() {
       <section className="search-bar">
         <div className="container-fluid">
           <div className="row ">
-            <div className="col-sm-12 col-md-4 col-lg-4  user-profile">
+            <div className="col-sm-6 col-md-4 col-lg-4  user-profile">
               <img alt="User Profile" src={userProfile} />
               <div className="userinfo">
                 <h4>Username</h4>
@@ -99,14 +99,6 @@ function Home() {
                 />
               </form>
             </div>
-            {/* <div className="col-sm-12 d-block d-sm-inlinecol-sm-12 d-block d-sm-inline mb-3 mb-sm-0">
-              <button
-                className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
-                onClick={toggleMenu}
-              >
-                <FontAwesomeIcon icon={faSliders} />
-              </button>
-            </div> */}
           </div>
         </div>
       </section>
@@ -131,7 +123,7 @@ function Home() {
               </form>
             </div>
 
-            <div className="col-sm-12 col-md-6 col-lg-8 ">
+            <div className="col-sm-12 col-md-8 col-lg-8 ">
               <div className="table-responsive main-table ">
                 <table className="table table-striped table-dark table-custom">
                   <thead>

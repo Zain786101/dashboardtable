@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./menubar.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -8,14 +9,36 @@ import {
   faLink,
   faWindowRestore,
   faWindowMaximize,
+  faSliders,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Menubar() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleManue = () => {
+    setShowMenu(!showMenu);
+  };
   return (
     <section className="sidebar">
       <div className="container-fluid side-bar">
-        <div className="row mt-5">
-          <div className="col-12 side-bar">
+        <div className="row">
+          {/*Start Toggle Button for small screen */}
+          <div className="col-12 d-block d-sm-none mb-3">
+            <button
+              className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
+              onClick={toggleManue}
+            >
+              <FontAwesomeIcon icon={faSliders} />
+            </button>
+          </div>
+          {/*End Toggle Button for small screen */}
+
+          {/* Menu list, hidden on small screens, shown on medium and larger screens */}
+          <div
+            className={`col-12 ${
+              showMenu ? "d-block" : "d-none"
+            } d-sm-block side-bar`}
+          >
             <div className="menu-list text-center text-sm-start listItem">
               <ul className="list">
                 <li className="list-item">

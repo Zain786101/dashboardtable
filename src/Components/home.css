@@ -98,12 +98,7 @@ body {
     }
 }
 
-@media (max-width: 576px) {
-    .user-profile {
-        justify-content: center;
 
-    }
-}
 
 @media (max-width: 576px) {
     .search-bar input::placeholder {
@@ -222,12 +217,12 @@ body {
     overflow-x: auto;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+/* @media (min-width: 768px) and (max-width: 991.98px) {
     .main-table {
         flex: 0 0 auto;
         width: 135.666667%;
     }
-}
+} */
 
 
 
