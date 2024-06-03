@@ -23,7 +23,7 @@ function Menubar() {
       <div className="container-fluid side-bar">
         <div className="row">
           {/*Start Toggle Button for small screen */}
-          <div className="col-12 d-block d-sm-none mb-3">
+          <div className="col-6 d-block d-sm-none mb-3">
             <button
               className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
               onClick={toggleManue}

@@ -79,8 +79,12 @@ function Home() {
       {/*Start Search Bar Section */}
       <section className="search-bar">
         <div className="container-fluid">
-          <div className="row ">
-            <div className="col-sm-6 col-md-4 col-lg-4  user-profile">
+          <div className="row">
+            <div className="col-sm-6 col-md-4 col-lg-4 user-profile">
+              {/* Show Menubar only on small screens */}
+              <div className="d-block d-sm-none menubar-container">
+                <Menubar />
+              </div>
               <img alt="User Profile" src={userProfile} />
               <div className="userinfo">
                 <h4>Username</h4>
@@ -88,10 +92,10 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-sm-12 col-md-8 col-lg-8  d-none d-sm-block ">
-              <form class="form-inline searchBar">
+            <div className="col-sm-12 col-md-8 col-lg-8 d-none d-sm-block">
+              <form className="form-inline searchBar">
                 <input
-                  className="form-control mr-sm-2  searchBar"
+                  className="form-control mr-sm-2 searchBar"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
@@ -103,12 +107,12 @@ function Home() {
         </div>
       </section>
       {/*End Search Bar Section */}
-
       {/*Start Table Section */}
       <section className="table-section">
         <div className="container-fluid">
           <div className="row mt-2">
-            <div className="col-sm-12 col-md-4 col-lg-4 ">
+            {/* Hide Menubar on small screens */}
+            <div className="col-sm-12 col-md-4 col-lg-4 d-none d-sm-block">
               <Menubar />
             </div>
             <div className="col-sm-12 col-md-8 col-lg-8 d-block d-sm-none">
