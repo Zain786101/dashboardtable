@@ -98,12 +98,7 @@ body {
     }
 }
 
-@media (max-width: 576px) {
-    .user-profile {
-        justify-content: center;
 
-    }
-}
 
 @media (max-width: 576px) {
     .search-bar input::placeholder {
@@ -122,7 +117,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-top: 21px;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -166,8 +161,6 @@ body {
 .userinfo p {
     color: rgba(247, 244, 244, 0.801);
 }
-
-
 
 
 .search-bar {
@@ -219,12 +212,43 @@ body {
     }
 }
 
-.table {
-    background-color: #1C1B20;
+/* Ensuring the table can scroll horizontally on small screens */
+.table-responsive {
+    overflow-x: auto;
 }
+
+/* @media (min-width: 768px) and (max-width: 991.98px) {
+    .main-table {
+        flex: 0 0 auto;
+        width: 135.666667%;
+    }
+} */
+
+
+
+@media (max-width: 576px) {
+
+    .table-custom th,
+    .table-custom td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+
+}
+
 
 .table-button {
     display: flex;
+}
+
+@media (max-width: 576px) {
+
+    .table-button {
+        justify-content: center;
+    }
+
+
 }
 
 .table-button button {
@@ -236,6 +260,16 @@ body {
     color: rgba(247, 244, 244, 0.801);
 
     font-size: large;
+}
+
+@media (max-width: 576px) {
+
+    .table-button button {
+        width: 60%;
+
+    }
+
+
 }
 
 /* CSS for Home component */
@@ -258,55 +292,31 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
+
 }
 
-/* .box {
-    width: 70px;
-    height: 47px;
-    background: #92B901;
-    color: #ffffff;
-    position: relative;
-    font-weight: bold;
-    font-size: 20px;
+/* Add custom styles for the menubar */
+.menubar-container {
+    position: absolute;
+    top: -26px;
+    right: 0;
+    background-color: #1C1B20;
+    z-index: 1;
     padding: 10px;
-    border-radius: 5px;
-    animation: animated_div 5s linear forwards;
+
 }
 
-@keyframes animated_div {
-    0% {
-        transform: rotate(0deg);
-        left: 0px;
+/* Adjust the user-profile styles to prevent layout issues */
+.user-profile {
+    position: relative;
+    /* Ensure the menubar is positioned relative to the user-profile */
+    padding: 10px;
+}
 
-    }
+/* Ensure the user info layout does not disappear when menubar is shown */
+.userinfo {
+    padding: 10px;
 
-    25% {
-        transform: rotate(20deg);
-        left: 0px;
+    background-color: #1C1B20;
 
-    }
-
-    50% {
-        transform: rotate(0deg);
-        left: 500px;
-
-    }
-
-    55% {
-        transform: rotate(0deg);
-        left: 500px;
-
-    }
-
-    70% {
-        transform: rotate(0deg);
-        left: 500px;
-        background: #1ec7e6;
-    }
-
-    100% {
-        transform: rotate(-360deg);
-        left: 0px;
-
-    }
-} */
+}
