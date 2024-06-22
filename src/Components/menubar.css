@@ -1,16 +1,12 @@
 .side-bar {
     margin-top: 50px;
-
 }
 
 .list {
     list-style: none;
-
 }
 
-
 .list li {
-    /* border: 1px solid white; */
     display: flex;
     padding: 8px;
     height: 50px;
@@ -20,7 +16,6 @@
 
 .list li:hover {
     background-color: #3D4047;
-
 }
 
 @media (max-width: 576px) {

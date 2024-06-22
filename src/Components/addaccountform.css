@@ -3,7 +3,6 @@
   border-radius: 0 30px 0 30px;
   margin-bottom: 10px;
   padding: 20px;
-
 }
 
 .close-btn {
@@ -13,7 +12,6 @@
 
 .btn.btn-outline {
   color: black;
-  /* border: 1px solid #e31c51; */
   padding: 8px 16px;
   transition: all 0.3s ease;
 }
@@ -23,7 +21,7 @@
   color: white;
 }
 
-*/ .close-icon {
+.close-icon {
   color: white;
   font-size: 28px;
 }
@@ -34,13 +32,9 @@
   width: 40%;
 }
 
-/* addaccountform.css */
-
 .user-form .form-control {
   background-color: white;
-  /* Change background color to white */
   color: #000000;
-  /* Change text color to dark */
 }
 
 .form-control {

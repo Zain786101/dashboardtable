@@ -32,9 +32,9 @@ function Home() {
     const fetchUserData = async () => {
       try {
         const response = await axios.get("http://localhost:3000/user");
-        setFormData(response.data); // Update tableData state with API response
-        setTableData(response.data); // Initialize tableData with all data
-        setFilteredData(response.data); // Initialize filteredData with all dat
+        setFormData(response.data);
+        setTableData(response.data);
+        setFilteredData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -107,6 +107,7 @@ function Home() {
         </div>
       </section>
       {/*End Search Bar Section */}
+
       {/*Start Table Section */}
       <section className="table-section">
         <div className="container-fluid">
@@ -168,12 +169,14 @@ function Home() {
                   </tbody>
                 </table>
               </div>
+
               {/* Button to toggle form */}
               <div className="table-button">
                 <button type="button" onClick={toggleForm}>
                   Add Account
                 </button>
               </div>
+
               {/* Popup Add Account Form */}
               {showForm && (
                 <div className="modal-overlay">

@@ -1,64 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
 body {
     background-color: #1C1B20;
     color: white;
-    font-family: sans-serif;
-    /* height: 1200px; */
-
+    box-sizing: border-box;
 }
-
 
 .header {
     margin-top: 10px;
-
 }
 
-/* .logoName h4 {
-    display: flex;
-    justify-content: flex-start;
-
-   
-
-} */
+.logoName {
+    margin-top: 10px;
+}
 
 @media (min-width: 992px) {
-
     .logoName {
         justify-content: flex-start !important;
-        margin-top: 10px;
-
-        /* Reset justify-content for large screens */
     }
-}
 
-@media (min-width: 992px) {
     .profile-container {
         justify-content: flex-end !important;
+    }
 
+    .user-profile {
+        padding-left: 81px;
+    }
 
+    .main-table {
+        margin-right: 2rem;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .logoName {
         justify-content: flex-start !important;
-        margin-top: 10px;
-
     }
-}
 
-@media (min-width: 768px) and (max-width: 991.98px) {
     .profile-container {
         justify-content: flex-end !important;
+    }
 
+    .user-profile {
+        padding-left: 60px;
+    }
+
+    .searchBar {
+        width: 100%;
     }
 }
 
+@media (max-width: 576px) {
+    .user-profile {
+        justify-content: center;
+    }
 
+    .search-bar input::placeholder {
+        color: rgba(247, 244, 244, 0.801);
+    }
+
+    .searchBar {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .searchBar input[type="search"] {
+        margin: auto;
+        display: block;
+    }
+
+    .table-custom th,
+    .table-custom td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .table-button {
+        justify-content: center;
+    }
+
+    .table-button button {
+        width: 60%;
+    }
+}
 
 .profile {
     display: flex;
     justify-content: flex-end;
-
 }
 
 .profile img {
@@ -66,51 +99,16 @@ body {
     width: 50px;
     border-radius: 50px;
     position: relative;
-    /* margin-right: 40px; */
 }
-
 
 .brekline {
     border-bottom: 2px solid #4E4D51;
     margin-top: 10px;
 }
 
-
-
-
-@media (min-width: 992px) {
-    .user-profile {
-        padding-left: 60px;
-        /* Adjust padding instead of margin */
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .user-profile {
-        padding-left: 60px;
-
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .user-profile {
-        justify-content: center;
-    }
-}
-
-
-
-@media (max-width: 576px) {
-    .search-bar input::placeholder {
-        color: rgba(247, 244, 244, 0.801);
-    }
-}
-
-
-
 .user-profile {
     display: flex;
-
+    position: relative;
 }
 
 .user-profile img {
@@ -120,58 +118,30 @@ body {
     margin-top: 21px;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .searchBar {
-        width: 100%;
-
-
-    }
-}
-
-@media (max-width: 576px) {
-    .searchBar {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
-
-    }
-
-    .searchBar input[type="search"] {
-        margin: auto;
-        display: block;
-
-    }
-}
-
 .searchBar {
     margin-top: 10px;
-
 }
-
 
 .userinfo {
     margin-left: 10px;
 }
 
-.userinfo h4 {
-    color: rgba(247, 244, 244, 0.801);
-    margin-top: 10px;
-}
-
+.userinfo h4,
 .userinfo p {
     color: rgba(247, 244, 244, 0.801);
 }
 
+.userinfo h4 {
+    margin-top: 10px;
+}
 
 .search-bar {
     margin-top: 40px;
-
 }
 
 .search-bar input::placeholder {
     color: rgba(247, 244, 244, 0.801);
     margin-right: 30px !important;
-
 }
 
 .input-group-prepend {
@@ -179,7 +149,6 @@ body {
     left: 6px;
     top: 18px;
     z-index: 1;
-
 }
 
 .input-group-text {
@@ -188,11 +157,9 @@ body {
     border: none;
     padding: 0;
     margin-left: 10px;
-
 }
 
 .form-control {
-    /* width: 70%; */
     height: 50px;
     background-color: #3D3F4B;
     border: none;
@@ -205,50 +172,12 @@ body {
     margin-right: 40px;
 }
 
-@media (min-width: 992px) {
-    .main-table {
-        margin-right: 2rem;
-        /* Adjust margin size as needed */
-    }
-}
-
-/* Ensuring the table can scroll horizontally on small screens */
 .table-responsive {
     overflow-x: auto;
 }
 
-/* @media (min-width: 768px) and (max-width: 991.98px) {
-    .main-table {
-        flex: 0 0 auto;
-        width: 135.666667%;
-    }
-} */
-
-
-
-@media (max-width: 576px) {
-
-    .table-custom th,
-    .table-custom td {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-    }
-
-
-}
-
-
 .table-button {
     display: flex;
-}
-
-@media (max-width: 576px) {
-
-    .table-button {
-        justify-content: center;
-    }
-
-
 }
 
 .table-button button {
@@ -258,21 +187,8 @@ body {
     width: 40%;
     height: 48px;
     color: rgba(247, 244, 244, 0.801);
-
     font-size: large;
 }
-
-@media (max-width: 576px) {
-
-    .table-button button {
-        width: 60%;
-
-    }
-
-
-}
-
-/* CSS for Home component */
 
 .modal-overlay {
     position: fixed;
@@ -292,10 +208,8 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
-
 }
 
-/* Add custom styles for the menubar */
 .menubar-container {
     position: absolute;
     top: -26px;
@@ -303,20 +217,9 @@ body {
     background-color: #1C1B20;
     z-index: 1;
     padding: 10px;
-
 }
 
-/* Adjust the user-profile styles to prevent layout issues */
-.user-profile {
-    position: relative;
-    /* Ensure the menubar is positioned relative to the user-profile */
-    padding: 10px;
-}
-
-/* Ensure the user info layout does not disappear when menubar is shown */
 .userinfo {
     padding: 10px;
-
     background-color: #1C1B20;
-
 }

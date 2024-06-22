@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./menubar.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -15,23 +14,21 @@ import {
 function Menubar() {
   const [showMenu, setShowMenu] = useState(false);
 
-  const toggleManue = () => {
+  const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
   return (
     <section className="sidebar">
       <div className="container-fluid side-bar">
         <div className="row">
-          {/*Start Toggle Button for small screen */}
+          {/* Start Toggle Button for small screen */}
           <div className="col-6 d-block d-sm-none mb-3">
-            <button
-              className="btn btn-outline-secondary d-block d-sm-none" // Show on sm screens only
-              onClick={toggleManue}
-            >
+            <button className="btn btn-outline-secondary" onClick={toggleMenu}>
               <FontAwesomeIcon icon={faSliders} />
             </button>
           </div>
-          {/*End Toggle Button for small screen */}
+          {/* End Toggle Button for small screen */}
 
           {/* Menu list, hidden on small screens, shown on medium and larger screens */}
           <div
